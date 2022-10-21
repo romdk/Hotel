@@ -13,6 +13,7 @@
             $this->_chambre=$chambre;
             $this->_chambre->ajouterReservation($this);
             $this->_periode=$periode;
+            $this->_hotel->addNbChambreReserve();
         }
 
         
@@ -34,6 +35,7 @@
 
         public function setChambre(Chambre $chambre){
             $this->_chambre = $chambre;
+
         }
          
         public function getChambre(): Chambre {

@@ -31,7 +31,7 @@
 
         echo $hotel1->infosHotel();
         echo "<br><br>";
-        echo $hotel1->afficherReservationsHotel();
+        // echo $hotel1->afficherReservationsHotel();
 
     ?>
 
