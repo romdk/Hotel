@@ -17,6 +17,7 @@ class Hotel
         $this->_adresse = $adresse;
         $this->_nbChambre = $nbChambre;
         $this->_reservations = [];
+        $this->_chambres = [];
         $this->_nbChambreReserve = 0;
         $this->_nbChambreDispo = $nbChambre;
         $this->_nbReservation = 0;
@@ -60,6 +61,10 @@ class Hotel
     public function getAdresse(): string
     {
         return $this->_adresse;
+    }
+
+    public function ajouterChambre(Chambre $chambre){
+        $this->_chambres[]=$chambre;
     }
 
     public function setNbChambre(string $nbChambre)
@@ -118,9 +123,14 @@ class Hotel
     return $result;
     }
 
-    // public function afficherStatutsDesChambres(){
-    //     foreach ($this->_chambres as $chambre){
-    // };
-    // }
+    public function afficherStatutsDesChambres(){
+        $result = "Statuts des chambres de ".$this->getNomHotel()." " 
+        .str_repeat("*", ($this->getNbEtoile())). " " 
+        .$this->getVille()."<br>";
+        foreach ($this->_chambres as $chambre){
+            $result .= "Chambre ".$chambre->getChambre()->getNumero();
+    }
+    return $result;
+    }
 
 }
