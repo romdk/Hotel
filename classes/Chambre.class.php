@@ -14,6 +14,7 @@
             $this->_wifi=$wifi;
             $this->_etat=$etat;
             $this->_hotel=$hotel;
+            $this->_hotel->ajouterChambre($this);
             $this->_reservations=[];
         }
 
@@ -46,8 +47,22 @@
             $this->_wifi = $wifi;
         }
          
-        public function getWifi(): bool {
-            return $this->_wifi;
+        public function getWifi() {
+            $result = $this->_wifi;
+            if($result == 1){
+                return "Oui";
+            }else return "Non";
+        }
+
+        public function setEtat(bool $etat){
+            $this->_etat = $etat;
+        }
+         
+        public function getEtat() {
+            $result = $this->_etat;
+            if($result == 1){
+                return "Réservée";
+            }else return "Disponible";
         }
 
         public function ajouterReservation(Reservation $reservation){
