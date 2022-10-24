@@ -34,6 +34,22 @@
             return $this->_prix;
         }
 
+        public function setNbLit(int $nbLit){
+            $this->_nbLit = $nbLit;
+        }
+         
+        public function getNbLit(): int {
+            return $this->_nbLit;
+        }
+
+        public function setWifi(bool $wifi){
+            $this->_wifi = $wifi;
+        }
+         
+        public function getWifi(): bool {
+            return $this->_wifi;
+        }
+
         public function ajouterReservation(Reservation $reservation){
             $this->_reservations[]=$reservation;
 
