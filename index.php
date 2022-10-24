@@ -39,7 +39,7 @@
         echo "<br><br>";
         echo $client2->afficherReservationsClient();
         echo "<br><br>";
-        // echo $hotel1->afficherStatutsDesChambres();
+        echo $hotel1->afficherStatutsDesChambres();
 
     ?>
 
