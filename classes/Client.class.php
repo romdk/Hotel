@@ -40,7 +40,7 @@
                 .str_repeat("*", ($reservation->getHotel()->getNbEtoile()))." "
                 .$reservation->getHotel()->getVille()." / Chambre : "
                 .$reservation->getChambre()->getNumero()." ("
-                .$reservation->getChambre()->getNbLit()." - "
+                .$reservation->getChambre()->getNbLit()." Lits - "
                 .$reservation->getChambre()->getPrix()."&euro; - Wifi: "
                 .$reservation->getChambre()->getWifi().") "
                 .$reservation->getPeriode()."<br>";
