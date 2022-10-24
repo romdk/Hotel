@@ -24,12 +24,15 @@
         $client1 = new Client("GIBELLO","Virgile");
         $client2 = new Client("MURMANN","Micka");
 
-        $chambre1 = new Chambre(1,120,2,false,true,$hotel1);
-        $chambre2 = new Chambre(2,120,2,false,true,$hotel1);
+        $chambre1 = new Chambre(1,120,2,true,true,$hotel1);
+        $chambre2 = new Chambre(2,250,3,true,true,$hotel1);
+        $chambre3 = new Chambre(3,160,3,false,false,$hotel1);
+        $chambre4 = new Chambre(1,100,2,false,true,$hotel2);
+        $chambre5 = new Chambre(2,120,2,false,true,$hotel2);
 
         $reservation1 = new Reservation($client1,$hotel1,$chambre1,"du 01-01-2021 au 12-01-2021");
         $reservation2 = new Reservation($client2,$hotel1,$chambre2,"du 05-01-2021 au 10-01-2021");
-        $reservation3 = new Reservation($client2,$hotel2,$chambre2,"du 02-01-2021 au 16-01-2021");
+        $reservation3 = new Reservation($client2,$hotel2,$chambre4,"du 02-01-2021 au 16-01-2021");
 
         echo $hotel1->infosHotel();
         echo "<br><br>";
@@ -43,7 +46,8 @@
 
     ?>
 
-    <!-- reservations faire un array dans lequel s'ajoute chaque reservation, même array pour clients que hotels -->
+    <!-- faire calcul somme prix reservation par rapport au nb de nuits -->
+    <!-- si chambre dans reservation etat deviens true et inversement -->
     
     
 </body>
