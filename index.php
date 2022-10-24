@@ -25,13 +25,21 @@
         $client2 = new Client("MURMANN","Micka");
 
         $chambre1 = new Chambre(1,120,2,false,true,$hotel1);
-        $chambre1 = new Chambre(2,120,2,false,true,$hotel1);
+        $chambre2 = new Chambre(2,120,2,false,true,$hotel1);
 
-        $reservation1 = new Reservation($client1,$hotel1,$chambre1,"du 01-01-2021 au 01-01-2021");
+        $reservation1 = new Reservation($client1,$hotel1,$chambre1,"du 01-01-2021 au 12-01-2021");
+        $reservation2 = new Reservation($client2,$hotel1,$chambre2,"du 05-01-2021 au 10-01-2021");
+        $reservation3 = new Reservation($client2,$hotel2,$chambre2,"du 02-01-2021 au 16-01-2021");
 
         echo $hotel1->infosHotel();
         echo "<br><br>";
-        // echo $hotel1->afficherReservationsHotel();
+        echo $hotel1->afficherReservationsHotel();
+        echo "<br><br>";
+        echo $hotel2->afficherReservationsHotel();
+        echo "<br><br>";
+        echo $client2->afficherReservationsClient();
+        echo "<br><br>";
+        // echo $hotel1->afficherStatutsDesChambres();
 
     ?>
 
