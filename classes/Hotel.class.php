@@ -7,6 +7,7 @@ class Hotel
     private string $_adresse;
     private int $_nbChambre;
     private int $_nbChambreReserve;
+    private int $_nbReservation;
 
     public function __construct(string $nom, int $nbEtoile, string $ville, string $adresse, int $nbChambre)
     {
@@ -18,6 +19,7 @@ class Hotel
         $this->_reservations = [];
         $this->_nbChambreReserve = 0;
         $this->_nbChambreDispo = $nbChambre;
+        $this->_nbReservation = 0;
     }
 
     public function setNomHotel(string $nom)
@@ -87,6 +89,12 @@ class Hotel
 
      public function ajouterReservation(Reservation $reservation){
          $this->_reservations[]=$reservation;
+         $this->_nbReservation++;
+     }
+
+     public function getNbReservation(): int
+     {
+        return $this->_nbReservation;
      }
 
     public function infosHotel()
@@ -95,10 +103,24 @@ class Hotel
         return $result;
     }
 
-    // public function afficherReservationsHotel(){
-    //     foreach ($this-> _reservations as $reservation){
-    //     $result .= $reservation->getNom();
-    //     }
+    public function afficherReservationsHotel(){
+        $result = "Réservations de l'hôtel "
+        .$this->getNomHotel()." " 
+        .str_repeat("*", ($this->getNbEtoile())). " " 
+        .$this->getVille()."<br>"
+        .$this->getNbReservation()." RESERVATIONS <br>";
+        foreach ($this-> _reservations as $reservation){
+        $result .= $reservation->getClient()->getPrenom()." "
+        .$reservation->getClient()->getNom()." - Chambre"
+        .$reservation->getChambre()->getNumero()." - "
+        .$reservation->getPeriode()."<br>";
+    }
+    return $result;
+    }
+
+    // public function afficherStatutsDesChambres(){
+    //     foreach ($this->_chambres as $chambre){
+    // };
     // }
 
 }
