@@ -128,7 +128,12 @@ class Hotel
         .str_repeat("*", ($this->getNbEtoile())). " " 
         .$this->getVille()."<br>";
         foreach ($this->_chambres as $chambre){
-            $result .= "Chambre ".$chambre->getChambre()->getNumero();
+            $result .= "Chambre "
+            .$chambre->getNumero()." "
+            .$chambre->getPrix()."&euro;"." "
+            .$chambre->getWifi()." "
+            .$chambre->getEtat()
+            ."<br>";
     }
     return $result;
     }
